@@ -21,13 +21,31 @@
 # random_month = rn.choice(['sausis', 'vasaris', 'kovas'])
 # print(random_month)
 
+#
+# from random import randint, choice
+# random_number = randint(1, 10)
+# random_fruit = choice(['obuolys', 'bananas', 'kriause', 'vysnia'])
+# print(random_number)
+# print(random_fruit)
+#
+# import datetime
+# data_now  = datetime.datetime.now()
+# print(data_now)
+#
+# import datetime as dt
+# print(dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+#
+# from random import randint as rnt
+# print(rnt(1,10))
+#
+# from random import *
+# parinktis = sample(['sausis', 'vasaris', 'kovas'], k = 3)
+# print(parinktis)
 
-from random import randint, choice
-random_number = randint(1, 10)
-random_fruit = choice(['obuolys', 'bananas', 'kriause', 'vysnia'])
-print(random_number)
-print(random_fruit)
+from math import sqrt as sq
+kvadratine_saknis = round(sq(625))
+print(kvadratine_saknis)
 
-import datetime
-data_now  = datetime.datetime.now()
-print(data_now)
+from math import *
+sinusas = sin(radians(90))
+print(sinusas)
