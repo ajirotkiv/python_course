@@ -42,10 +42,10 @@
 # parinktis = sample(['sausis', 'vasaris', 'kovas'], k = 3)
 # print(parinktis)
 
+from math import *
 from math import sqrt as sq
 kvadratine_saknis = round(sq(625))
 print(kvadratine_saknis)
 
-from math import *
 sinusas = sin(radians(90))
 print(sinusas)
