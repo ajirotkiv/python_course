@@ -5,6 +5,7 @@
 # print(
 #     create_greetings('name')
 # )
+from operator import truediv
 
 # def sudaugink(num1, num2):
 #     res = num1 * num2
@@ -50,13 +51,13 @@
 # vardus ir kiekvienam iš jų atspausdintų pasisveikinimą.
 # Pvz.: „Labas, Jonas!“, „Labas, Asta!“, „Labas, Mantas!“.
 # 4. Numatytosios reikšmės ir keyword argumentai
-user = ''
-def trys_sveikinimai(vardas1, vardas2, vardas3):
-    greetings = f'Labas, {vardas1}', f'Labas, {vardas2}', f'Labas, {vardas3}'
-    return greetings
-res = trys_sveikinimai('Adomas', 'Petras', 'Jurate')
-print(res)
-
+# user = ''
+# def trys_sveikinimai(vardas1, vardas2, vardas3):
+#     greetings = f'Labas, {vardas1}', f'Labas, {vardas2}', f'Labas, {vardas3}'
+#     return greetings
+# res = trys_sveikinimai('Adomas', 'Petras', 'Jurate')
+# print(res)
+#
 
 # Užduotis 4:
 # Sukurkite funkciją sveikink_su_pavadinimu(vardas, pavadinimas="drauge"), kuri
@@ -64,7 +65,41 @@ print(res)
 # 1. Iškvieskite funkciją nenurodydami pavadinimo.
 # 2. Iškvieskite funkciją, nurodydami pavadinimą „kolega“.
 
-def sveikink_su_pavadinimu(vardas, pavadinimas="drauge"):
-    print(f'Sveikas, {vardas}! Ka veiki, {pavadinimas}?')
-sveikink_su_pavadinimu('Bernotas')
-sveikink_su_pavadinimu('Lukas', 'kaimine')
+# def sveikink_su_pavadinimu(vardas, pavadinimas="drauge"):
+#     print(f'Sveikas, {vardas}! Ka veiki, {pavadinimas}?')
+# sveikink_su_pavadinimu('Bernotas')
+# sveikink_su_pavadinimu('Lukas', 'kaimine')
+#
+#
+
+# Loginiai jungikliai funkcijose
+# Užduotis 5:
+# Sukurkite funkciją skaiciuoti_sumos_tipą(x, y, tik_teigiama=False), kuri
+# priimtų du skaičius ir grąžintų jų sumą.
+# • Jei tik_teigiama=True, funkcija grąžintų tik teigiamą sumą (jei suma neigiama,
+# grąžintų 0).
+
+def skaiciuoti_sumos_tipą(x, y, tik_teigiama=False):
+    if not tik_teigiama:
+        return 0
+    else:
+        return x + y
+
+print(skaiciuoti_sumos_tipą(6, 8, True))
+print(skaiciuoti_sumos_tipą(-6, 8, False))
+
+# Docstringai funkcijose
+# Užduotis 6:
+# Sukurkite funkciją apskaiciuok_vidurki(skaiciai), kuri apskaičiuotų ir grąžintų
+# sąrašo skaičių vidurkį. Pridėkite docstring su informacija apie:
+# • Funkcijos paskirtį.
+# • Argumentus (sąrašas skaičių).
+# • Grąžinamą reikšmę (vidurkis).
+
+def apskaiciuok_vidurki(skaiciai):
+
+# Type hints ir anotacijos
+
+# Užduotis 7:
+# Sukurkite funkciją prideti_zodi(tekstas: str, zodis: str) -> str, kuri priimtų
+# sakinį ir pridedamą žodį, o tada grąžintų sakinį su tuo žodžiu gale.
