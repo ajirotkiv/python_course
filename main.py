@@ -5,7 +5,6 @@
 # print(
 #     create_greetings('name')
 # )
-from operator import truediv
 
 # def sudaugink(num1, num2):
 #     res = num1 * num2
@@ -79,14 +78,14 @@ from operator import truediv
 # • Jei tik_teigiama=True, funkcija grąžintų tik teigiamą sumą (jei suma neigiama,
 # grąžintų 0).
 
-def skaiciuoti_sumos_tipą(x, y, tik_teigiama=False):
-    if not tik_teigiama:
-        return 0
-    else:
-        return x + y
-
-print(skaiciuoti_sumos_tipą(6, 8, True))
-print(skaiciuoti_sumos_tipą(-6, 8, False))
+# def skaiciuoti_sumos_tipą(x, y, tik_teigiama=False):
+#     if not tik_teigiama:
+#         return 0
+#     else:
+#         return x + y
+#
+# print(skaiciuoti_sumos_tipą(6, 8, True))
+# print(skaiciuoti_sumos_tipą(-6, 8, False))
 
 # Docstringai funkcijose
 # Užduotis 6:
@@ -96,10 +95,36 @@ print(skaiciuoti_sumos_tipą(-6, 8, False))
 # • Argumentus (sąrašas skaičių).
 # • Grąžinamą reikšmę (vidurkis).
 
-def apskaiciuok_vidurki(skaiciai):
+# def apskaiciuok_vidurki(skaiciai):
 
 # Type hints ir anotacijos
 
 # Užduotis 7:
 # Sukurkite funkciją prideti_zodi(tekstas: str, zodis: str) -> str, kuri priimtų
 # sakinį ir pridedamą žodį, o tada grąžintų sakinį su tuo žodžiu gale.
+
+# from Lib import matematika
+
+# print(matematika.sudetis(4, 7))
+# print(matematika.daugyba(1, 8))
+
+from moduliai import aritmetika
+from moduliai.aritmetika import atimtis
+
+print(aritmetika.atimtis(10, 7))
+print(aritmetika.dalyba(10, 5))
+
+import moduliai.aritmetika
+print((moduliai.aritmetika.atimtis(20, 5)))
+print((moduliai.aritmetika.dalyba(10, 2)))
+
+from moduliai.aritmetika import atimtis, dalyba
+print(aritmetika.atimtis(50, 25))
+print(aritmetika.dalyba(100, 4))
+
+import moduliai.aritmetika as ar
+print(ar.atimtis(30, 10))
+print(ar.dalyba(50, 5))
+
+import moduliai
+print(moduliai.aritmetika.atimtis(15, 5))
