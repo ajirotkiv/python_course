@@ -24,17 +24,29 @@
 # except ZeroDivisionError:
 #     print('Dalyba is nulio negalima. Iveskite kita skaiciu')
 
+#
+# num = input("Iveskite skaiciu: ")
+#
+# try:
+#     number = int(num)
+#
+# except ValueError:
+#     print('Konvertacija nesekminga, bandykite dar karta')
+#
+# else:
+#     print(f'Konversija sekminga {number}')
+#
+# finally:
+#     print('Programa baige darba')
 
-num = input("Iveskite skaiciu: ")
-
-try:
-    number = int(num)
-
-except ValueError:
-    print('Konvertacija nesekminga, bandykite dar karta')
-
-else:
-    print(f'Konversija sekminga {number}')
-
-finally:
-    print('Programa baige darba')
+# Funkcija tikrins amziu
+def tikrinti_amziu(amzius):
+    if amzius < 0:
+        raise ValueError('Amzius negali buti neigiamas')
+    elif amzius >= 18:
+        print('Vartotojas pilnameits')
+    else:
+        print('Vartotojas nepilnametis')
+tikrinti_amziu(-5)
+tikrinti_amziu(15)
+tikrinti_amziu(21)
