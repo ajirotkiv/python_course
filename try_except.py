@@ -40,13 +40,30 @@
 #     print('Programa baige darba')
 
 # Funkcija tikrins amziu
-def tikrinti_amziu(amzius):
-    if amzius < 0:
-        raise ValueError('Amzius negali buti neigiamas')
-    elif amzius >= 18:
-        print('Vartotojas pilnameits')
-    else:
-        print('Vartotojas nepilnametis')
-tikrinti_amziu(-5)
-tikrinti_amziu(15)
-tikrinti_amziu(21)
+# def tikrinti_amziu(amzius):
+#     if amzius < 0:
+#         raise ValueError('Amzius negali buti neigiamas')
+#     elif amzius >= 18:
+#         print('Vartotojas pilnameits')
+#     else:
+#         print('Vartotojas nepilnametis')
+# tikrinti_amziu(-5)
+# tikrinti_amziu(15)
+# tikrinti_amziu(21)
+
+from datetime import datetime
+print(datetime)
+print(datetime.today)
+# import datetime
+
+dt_res = datetime.datetime.today()
+print(dt_res)
+print(dt_res.year)
+print(dt_res.month)
+for i in range(1, 1000000):
+    a = 123
+print(dt_res.hour)
+print(dt_res.minute)
+print(dt_res.second)
+print(dt_res.microsecond)
+print(f'End - {datetime.datetime.today()}')
