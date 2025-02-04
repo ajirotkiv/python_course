@@ -69,6 +69,5 @@ print('----------')
 # a. Statinį lauką publisher (pridėkite jį kaip "Penguin").
 # b. Kiekvienos knygos pavadinimą ir autorių.
 
-print(f'Book Publisher: {Book.publisher}')
-print(f'Book name: {book1.title}, author: {book1.author}')
-print(f'Book name: {book2.title}, author: {book2.author}')
+print(f'Book name: {book1.title}, Author: {book1.author} Publisher: {Book.publisher}')
+print(f'Book name: {book2.title}, Author: {book2.author} Publisher: {Book.publisher}')
