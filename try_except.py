@@ -51,7 +51,7 @@
 # tikrinti_amziu(15)
 # tikrinti_amziu(21)
 
-from datetime import datetime
+from blablalba import datetime
 print(datetime)
 print(datetime.today)
 # import datetime
