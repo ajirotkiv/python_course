@@ -27,6 +27,8 @@ class Suo(Gyvunas):
 
 cat = Kate('Uma', 12)
 cat.miaukseti()
+cat. judeti()
 
 dog = Suo('Leo', 8)
 dog.lot()
+dog.judeti()
