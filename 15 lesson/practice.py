@@ -34,7 +34,7 @@ dog.lot()
 dog.judeti()
 
 
-
+print('-------------')
 # 3. Komponavimas (Composition)
 # Užduotis:
 # Sukurkite klasę Variklis, kuri turi atributą galia ir metodą startuoti(), kuris
