@@ -1,34 +1,27 @@
-# 2. Paveldėjimas (Inheritance)
-# Užduotis:
-# Sukurkite bazinę klasę Gyvunas, kuri turi atributus vardas ir amzius.
-# Pridėkite metodą judeti(), kuris spausdina, kad gyvūnas juda.
-# Sukurkite dvi paveldinčias klases: Kate ir Suo.
-# Kate klasėje pridėkite metodą miaukseti(), kuris sako "Vardas sako MIAU!"
-# Suo klasėje pridėkite metodą lot(), kuris sako "Vardas sako AU AU!"
-# Papildoma užduotis:
-# Sukurkite Kate ir Suo objektus, iškvieskite jų metodus ir patikrinkite, ar paveldėjimas
-# veikia.
-
-class Gyvunas:
-    def __init__(self, vardas, amzius):
+class Asmuo:
+    def __init__(self, vardas, pavarde, gim_metai):
         self.vardas = vardas
-        self.amzius = amzius
+        self. pavarde = pavarde
+        self.gim_metai = gim_metai
 
-    def judeti(self):
-        print(f'{self.vardas} juda :-)')
+class MokinioTevas(Asmuo):
+    def __init__(self, vardas, pavarde, gim_metai, darbuoviete):
+        super().__init__(vardas, pavarde, gim_metai)
+        self.darbuoviete = darbuoviete
+tevas = MokinioTevas(1, 2, 3, 4)
 
-class Kate(Gyvunas):
-    def miaukseti(self):
-        print(f'{self.vardas} sako MIAU!!!')
+print(tevas.vardas)
+print(tevas.darbuoviete)
 
-class Suo(Gyvunas):
-    def lot(self):
-        print(f'{self.vardas} sako AU AU')
 
-cat = Kate('Uma', 12)
-cat.miaukseti()
-cat. judeti()
+class Mygtukas:
+    def deaktyvuoti(self):
+        print('Mygtukas deaktyvuotas')
 
-dog = Suo('Leo', 8)
-dog.lot()
-dog.judeti()
+class RaudonasMygtukas(Mygtukas):
+    def deaktyvuoti(self):
+        super().deaktyvuoti()
+        print('Spalva pasikeite i rausva')
+
+red_bnt = RaudonasMygtukas()
+red_bnt.deaktyvuoti()
