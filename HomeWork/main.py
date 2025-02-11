@@ -44,6 +44,8 @@ class Universitetas():
     def rodyti_visus_studentus(self):
         for mokinys in self.students:
             print(mokinys.prisistatyti())
+universitetas = Universitetas()
+
 while True:
     print('1. Prideti nauja studenta')
     print('2. Parodyti visus studentus')
