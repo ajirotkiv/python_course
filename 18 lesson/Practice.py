@@ -103,38 +103,88 @@
 # Papildoma užduotis:
 # Pridėkite funkciją dalinti(a, b) su tuo pačiu dekoratoriumi. Jei b == 0, grąžinkite
 # klaidos pranešimą.
-
-def sekimo_dekoratorius(funkcija):
-    def wrapper(*args, **kwargs):
-        # Prieš vykdymą
-        print(f"Vykdoma funkcija: {funkcija.__name__}")
-
-        # Funkcijos vykdymas
-        rezultatas = funkcija(*args, **kwargs)
-
-        # Po vykdymo
-        print("Funkcija baigta!")
-
-        return rezultatas
-
-    return wrapper
-
+#
+# def sekimo_dekoratorius(funkcija):
+#     def wrapper(*args, **kwargs):
+#         # Prieš vykdymą
+#         print(f"Vykdoma funkcija: {funkcija.__name__}")
+#
+#         # Funkcijos vykdymas
+#         rezultatas = funkcija(*args, **kwargs)
+#         print(rezultatas)
+#         # Po vykdymo
+#         print("Funkcija baigta!")
+#
+#         return rezultatas
+#
+#     return wrapper
+#
 
 # Naudojame dekoratorių funkcijoms
+#
+# @sekimo_dekoratorius
+# def dauginti(a, b):
+#     return a * b
+#
+#
+# @sekimo_dekoratorius
+# def dalinti(a, b):
+#     if b == 0:
+#         return "Klaida: negalima dalyti iš 0"
+#     return a / b
+#
+#
+# # Pavyzdžiai
+# print(dauginti(5, 3))
+# print(dalinti(10, 0))
+# print(dalinti(10, 2))
 
-@sekimo_dekoratorius
-def dauginti(a, b):
-    return a * b
 
+# 3. Iteratoriai
+# Užduotis:
+# Sukurkite klasę SkaiciuSekosIteratorius, kuri:
+# 1. Inicializuojama su pradiniu ir galiniu skaičiumi.
+# 2. Leidžia iteruoti nuo pradinio iki galinio skaičiaus imtinai.
+# 3. Grąžina skaičius kas antrą žingsnį.
+# Papildoma užduotis:
+# Pridėkite metodą atgaline_seka(), kuris grąžina skaičius atvirkštine tvarka.
 
-@sekimo_dekoratorius
-def dalinti(a, b):
-    if b == 0:
-        return "Klaida: negalima dalyti iš 0"
-    return a / b
+class SkaiciuSekosIteratorius:
+    def __init__(self, pradzia, pabaiga):
+        # Inicializuojame pradinį ir galinį skaičius
+        self.pradzia = pradzia
+        self.pabaiga = pabaiga
+        self.dabartinis = pradzia
 
+    def __iter__(self):
+        # Grąžiname save, kad galėtume naudoti iteraciją
+        return self
 
-# Pavyzdžiai
-print(dauginti(5, 3))
-print(dalinti(10, 0))
-print(dalinti(10, 2))
+    def __next__(self):
+        # Tikriname, ar dabartinis skaičius yra mažesnis arba lygus galiniam
+        if self.dabartinis > self.pabaiga:
+            raise StopIteration
+        # Išsaugome dabartinį skaičių, prieš padidinant
+        skaicius = self.dabartinis
+        # Pereiname prie kito skaičiaus kas antrą žingsnį
+        self.dabartinis += 2
+        return skaicius
+
+    def atgaline_seka(self):
+        # Sukuriame naują iteratorių su atvirkštine tvarka
+        atvirkstine = list(range(self.pabaiga, self.pradzia - 1, -2))
+        return iter(atvirkstine)
+
+# Pavyzdys, kaip naudoti klasę
+iteratorius = SkaiciuSekosIteratorius(1, 10)
+
+print("Sekos eiga:")
+for skaicius in iteratorius:
+    print(skaicius)
+
+# Naudojame atgalinę seką
+print("\nAtgalinė seka:")
+atgal = iteratorius.atgaline_seka()
+for skaicius in atgal:
+    print(skaicius)
+
