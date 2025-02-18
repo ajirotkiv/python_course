@@ -66,11 +66,24 @@ session.add(mokytojas2)
 # Patvirtinti pakeitimus ir įrašyti į duomenų bazę
 session.commit()
 
-visi_mokiniai = session.query(Mokinys).all()
-for mokinys in visi_mokiniai:
-    print (f"<Mokinys(id={mokinys.id}, vardas='{mokinys.vardas}', pavarde='{mokinys.pavarde}', klase={mokinys.klase})>")
 
+# Funkcija, kuri tikrina, ar mokinys jau yra duomenų bazėje pagal vardą, pavardę, klase
+def patikra_mokinys(vardas, pavarde, klase):
+    return session.query(Mokinys).filter_by(vardas=vardas, pavarde=pavarde, klase=klase).first() is not None
+
+# Įterpiame mokinius tik tuo atveju, jei jų dar nėra
+def patikra_mokinys(vardas, pavarde, klase):
+    mokiniai = session.query(Mokinys).all()
+
+    session.add(mokinys1)
+    print(mokinys1)
+# visi_mokiniai = session.query(Mokinys).all()
+# for mokinys in visi_mokiniai:
+#     print (f"<Mokinys(id={mokinys.id}, vardas='{mokinys.vardas}', pavarde='{mokinys.pavarde}', klase={mokinys.klase})>")
+#
 
 visi_mokytojai = session.query(Mokytojas).all()
 for mokytojas in visi_mokytojai:
-    print (f"<Mokytojas(id={mokytojas.id}, vardas='{mokytojas.vardas}', pavarde='{mokytojas.pavarde}', klase={mokytojas.dalykas})>")
+    print (f"<Mokytojas(id={mokytojas.id}, vardas='{mokytojas.vardas}', pavarde='{mokytojas.pavarde}', dalykas={mokytojas.dalykas})>")
+
+session.commit()
